@@ -1,12 +1,12 @@
-# Personal website template
+# Jupiter Yao — Personal website
 
 A responsive personal site with About, Classes at Cornell, Projects, and a GitHub profile link. Built with plain HTML, CSS, and JavaScript. No package installation or build step is needed.
 
 ## Customize
 
-Edit `dist/content.js`. Change your name, initials, introduction, GitHub URL, optional email, courses, and projects. All course and project entries are explicitly labeled examples. The GitHub link currently uses the locally configured account, `Shdakudow`.
+Edit `dist/content.js` to update the introduction, GitHub URL, optional email, courses, and projects. The course list contains Jupiter Yao’s Cornell coursework; project entries remain labeled examples.
 
-You can also ask Codex: “Add CS 1234 to Classes at Cornell for Spring 2027, with this description and course link…” or “Replace my introduction with…” and have it update this repository.
+You can also ask Codex to add a class with its name, professor, and semester, or to update the introduction.
 
 Course format:
 
@@ -15,14 +15,14 @@ Course format:
   code: "CS 1234",
   title: "Your course title",
   term: "Spring 2027",
-  role: "Student", // or Instructor / Teaching assistant / another role
-  description: "Your description",
-  tags: ["Computer science"],
-  resources: [{ label: "Course website", url: "https://example.com" }]
+  professor: "Professor name",
+  source: "https://classes.cornell.edu/browse/roster/SP27/class/CS/1234"
 }
 ```
 
-This format is an example, not a claim that CS 1234 is a Cornell course. Classes have working search, semester filtering, and detail dialogs. Replace project examples with your own entries and set their `url` to enable direct project links. The email link stays hidden until an email is configured. Content is rendered as text; resource URLs accept only HTTP(S).
+This format is an example, not a claim that CS 1234 is a Cornell course. The website shows only class name, professor, and semester. Class names link to the official semester roster used to verify the instructor. Search works by class name, course code, or professor, with semester filtering. The A&S advising seminar and transfer credits are omitted. Grades, GPA, student identifiers, and transcript files are not included.
+
+Replace project examples with your own entries and set their `url` to enable direct project links. The email link stays hidden until an email is configured. Content is rendered as text; source URLs accept only HTTP(S).
 
 ## Preview locally
 
@@ -32,7 +32,7 @@ From this directory:
 python3 -m http.server 8767 --directory dist --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:8767. Typography loads from Google Fonts when available and falls back to local fonts offline.
+Open http://127.0.0.1:8767. The site uses local system fonts and requires no external font service.
 
 ## GitHub Pages
 

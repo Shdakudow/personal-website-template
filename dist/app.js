@@ -56,26 +56,31 @@
   function renderCourses() {
     const query = $('#course-search').value.trim().toLowerCase();
     const term = $('#term-filter').value;
-    const filtered = courses.filter(course => (term === 'all' || course.term === term) && [course.code, course.title, course.description, course.role, course.term, ...(course.tags || [])].join(' ').toLowerCase().includes(query));
+    const filtered = courses.filter(course => (term === 'all' || course.term === term) && [course.code, course.title, course.professor, course.term].join(' ').toLowerCase().includes(query));
     $('#course-list').replaceChildren();
     filtered.forEach(course => {
-      const button = element('button', 'course-row'); button.type = 'button';
-      button.setAttribute('aria-label', `View ${course.code}: ${course.title}`);
-      const details = element('div');
-      details.append(element('div', 'course-title', course.title));
-      const meta = element('div', 'course-meta');
-      meta.append(element('span', '', course.term), element('span', '', '·'), element('span', '', course.role));
-      (course.tags || []).filter(tag => tag !== 'Example').forEach(tag => meta.append(element('span', 'course-tag', tag)));
-      details.append(meta);
-      const arrow = element('span', 'course-action'); arrow.setAttribute('aria-hidden', 'true');
-      arrow.append(element('span', 'action-label', 'Details '), element('span', '', '→'));
-      button.append(element('span', 'course-code', course.code), details, arrow);
-      button.addEventListener('click', () => showDetails({eyebrow: course.code, title: course.title, meta: `${course.term} · ${course.role}`, description: course.description, resources: course.resources}));
-      $('#course-list').append(button);
+      const row = element('tr', 'course-row');
+      row.setAttribute('role', 'row');
+      const titleCell = element('td', 'course-name');
+      titleCell.setAttribute('role', 'cell');
+      titleCell.setAttribute('headers', 'class-column');
+      const source = safeUrl(course.source);
+      const title = element(source ? 'a' : 'span', 'course-title', course.title);
+      if (source) { title.href = source; title.target = '_blank'; title.rel = 'noopener noreferrer'; }
+      titleCell.append(title);
+      const professorCell = element('td', 'course-professor', course.professor);
+      professorCell.setAttribute('role', 'cell');
+      professorCell.setAttribute('headers', 'professor-column');
+      professorCell.dataset.label = 'Professor';
+      const termCell = element('td', 'course-term', course.term);
+      termCell.setAttribute('role', 'cell');
+      termCell.setAttribute('headers', 'term-column');
+      termCell.dataset.label = 'Term';
+      row.append(titleCell, professorCell, termCell);
+      $('#course-list').append(row);
     });
     $('#no-courses').hidden = filtered.length > 0;
     $('#course-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'class' : 'classes'}${term !== 'all' ? ` · ${term}` : ' · All semesters'}`;
-    $('.template-note').hidden = !courses.some(course => (course.tags || []).includes('Example'));
   }
   $('#term-filter').addEventListener('change', renderCourses);
   $('#course-search').addEventListener('input', renderCourses);

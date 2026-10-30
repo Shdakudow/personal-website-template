@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A personal website with classes at Cornell, projects, and notes.">
+  <meta name="description" content="Jupiter Yao — computer science at Cornell University, coursework, and projects.">
   <meta name="theme-color" content="#ffffff">
-  <title>Your Name — Personal website</title>
+  <title>Jupiter Yao — Personal website</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css?v=8bfd534bdb0b">
-  <script defer src="./content.js"></script>
-  <script defer src="./app.js"></script>
+  <link rel="stylesheet" href="./styles.css?v=b1d25ef3f080">
+  <script defer src="./content.js?v=7cf5707fa3b4"></script>
+  <script defer src="./app.js?v=06984f0a30a2"></script>
 </head>
 <body>
   <div class="page-frame" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
-    <a class="identity" href="#home" aria-label="Home"><span class="monogram" data-initials aria-hidden="true">YN</span><span data-name>Your Name</span></a>
+    <a class="identity" href="#home" aria-label="Home"><span class="monogram" data-initials aria-hidden="true">JY</span><span data-name>Jupiter Yao</span></a>
     <nav aria-label="Main navigation">
       <a href="#about">About</a><a href="#classes">Cornell classes</a><a href="#projects">Projects</a>
       <a data-github class="github-nav" href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
@@ -23,8 +23,8 @@
   </header>
   <main id="main">
     <section id="home" class="hero wrap" aria-labelledby="home-title">
-      <div class="crest" aria-hidden="true"><img src="./crest.svg" alt="" width="200" height="206"><span data-initials>YN</span></div>
-      <h1 id="home-title" data-name>Your Name</h1>
+      <div class="crest" aria-hidden="true"><img src="./crest.svg" alt="" width="200" height="206"><span data-initials>JY</span></div>
+      <h1 id="home-title" data-name>Jupiter Yao</h1>
       <p class="hero-tagline" data-tagline></p>
       <img class="flourish" src="./flourish.svg" alt="" width="300" height="34">
       <p class="hero-intro" data-bio></p>
@@ -35,13 +35,15 @@
       <div class="about-copy"><p data-about></p><a id="email-link" class="text-link" hidden>Get in touch <span aria-hidden="true">↗</span></a></div>
     </section>
     <section id="classes" class="classes-section wrap" aria-labelledby="classes-title">
-      <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="classes-title">Classes at Cornell</h2><p>Courses, notes, and resources.</p></header>
+      <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="classes-title">Classes at Cornell</h2></header>
       <div class="course-toolbar">
         <div class="filter-group"><label for="term-filter">Semester</label><select id="term-filter"><option value="all">All semesters</option></select></div>
-        <div class="filter-group search-group"><label for="course-search">Search classes</label><input id="course-search" type="search" placeholder="Course name or code"></div>
+        <div class="filter-group search-group"><label for="course-search">Search classes</label><input id="course-search" type="search" placeholder="Class or professor"></div>
       </div>
-      <p class="template-note">Sample courses — ready for your own classes.</p>
-      <div id="course-list" class="course-list"></div>
+      <table class="course-table" role="table" aria-labelledby="classes-title">
+        <thead role="rowgroup"><tr role="row"><th id="class-column" role="columnheader" scope="col">Class</th><th id="professor-column" role="columnheader" scope="col">Professor</th><th id="term-column" role="columnheader" scope="col">Term</th></tr></thead>
+        <tbody id="course-list" role="rowgroup"></tbody>
+      </table>
       <p id="no-courses" class="empty-state" hidden>No matching classes. Try another search or semester.</p>
       <p class="course-count" id="course-count" role="status" aria-live="polite"></p>
     </section>
@@ -53,7 +55,7 @@
       <div id="project-list" class="project-list"></div>
     </section>
   </main>
-  <footer class="site-footer wrap"><span>© <span id="year"></span> <span data-name>Your Name</span></span><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <footer class="site-footer wrap"><span>© <span id="year"></span> <span data-name>Jupiter Yao</span></span><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
   <dialog id="detail-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
     <div class="dialog-header"><span id="dialog-eyebrow"></span><button type="button" id="close-dialog" aria-label="Close details">×</button></div>
     <h2 id="dialog-title"></h2><p id="dialog-meta"></p><p id="dialog-description"></p><div id="dialog-resources"></div>
