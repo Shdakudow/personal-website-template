@@ -65,9 +65,10 @@
       details.append(element('div', 'course-title', course.title));
       const meta = element('div', 'course-meta');
       meta.append(element('span', '', course.term), element('span', '', '·'), element('span', '', course.role));
-      (course.tags || []).forEach(tag => meta.append(element('span', 'course-tag', tag)));
+      (course.tags || []).filter(tag => tag !== 'Example').forEach(tag => meta.append(element('span', 'course-tag', tag)));
       details.append(meta);
-      const arrow = element('span', 'arrow-circle', '↗'); arrow.setAttribute('aria-hidden', 'true');
+      const arrow = element('span', 'course-action'); arrow.setAttribute('aria-hidden', 'true');
+      arrow.append(element('span', 'action-label', 'Details '), element('span', '', '→'));
       button.append(element('span', 'course-code', course.code), details, arrow);
       button.addEventListener('click', () => showDetails({eyebrow: course.code, title: course.title, meta: `${course.term} · ${course.role}`, description: course.description, resources: course.resources}));
       $('#course-list').append(button);
@@ -82,12 +83,10 @@
   (content.projects || []).forEach(project => {
     const article = element('article', 'project-card');
     article.append(element('div', 'project-category', project.category), element('h3', '', project.title), element('p', '', project.description));
-    const bottom = element('div', 'project-bottom'); const tags = element('div', 'tags');
-    (project.tags || []).forEach(tag => tags.append(element('span', 'tag', tag)));
     const url = safeUrl(project.url);
-    const action = element(url ? 'a' : 'button', 'project-action', url ? 'Explore project ↗' : 'View template ↗');
+    const action = element(url ? 'a' : 'button', 'project-action', url ? 'View project ↗' : 'Details →');
     if (url) { action.href = url; action.target = '_blank'; action.rel = 'noopener noreferrer'; }
     else { action.type = 'button'; action.addEventListener('click', () => showDetails({eyebrow: project.category, title: project.title, meta: 'Example project · ready to customize', description: project.description + ' Replace this entry with your own project and add a URL to link directly to it.'})); }
-    bottom.append(tags, action); article.append(bottom); $('#project-list').append(article);
+    article.append(action); $('#project-list').append(article);
   });
 })();

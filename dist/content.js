@@ -2,8 +2,8 @@
 window.siteContent = {
   name: "Your Name",
   initials: "YN",
-  tagline: "Learning, building, and connecting the dots.",
-  bio: "This is my little corner of the internet: a place for the things I’m learning, the projects I’m building, and the questions I’m following.",
+  tagline: "Learning, research, and discovery.",
+  bio: "Welcome to my personal website. Here you’ll find my classes at Cornell, projects, and notes.",
   about: "Add a few lines about yourself here. Share what you study or teach, what you’re curious about, and what you enjoy outside of your work.",
   github: "https://github.com/Shdakudow",
   email: "", // Add your email to show an email link.
@@ -13,7 +13,7 @@ window.siteContent = {
     { code: "COURSE 03", title: "A class from a past semester", term: "Spring 2026", role: "Add your role", description: "Keep an archive of earlier classes and the ideas you want to return to. This entry is a placeholder for your own course.", tags: ["Example"], resources: [] }
   ],
   projects: [
-    { title: "Something you’re building", category: "PROJECT TEMPLATE", description: "Introduce a project, the question behind it, and what you made. Add its repository or live website when you’re ready.", tags: ["Your tools", "Your topic"], url: "" },
-    { title: "An idea worth exploring", category: "PROJECT TEMPLATE", description: "Make room for experiments, research, and works in progress. A small idea can belong here too.", tags: ["Work in progress"], url: "" }
+    { title: "Your project title", category: "Example project", description: "A brief introduction to your project: what you made and why it matters.", tags: [], url: "" },
+    { title: "Your research or idea", category: "Example project", description: "Describe a research question, experiment, or idea you’re working on.", tags: [], url: "" }
   ]
 };
