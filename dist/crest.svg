@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 206" fill="none">
+  <defs>
+    <g id="branch" stroke="#572764" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M94 188C49 173 24 128 43 77"/>
+      <path d="M42 85C30 81 29 71 32 64C42 69 46 76 42 85ZM38 101C26 98 21 89 22 81C33 85 39 91 38 101ZM38 118C24 117 17 109 17 101C29 102 37 108 38 118ZM42 136C28 138 19 132 16 124C28 122 37 127 42 136ZM51 153C37 158 27 154 22 147C34 141 44 145 51 153ZM64 168C52 176 41 174 34 168C44 160 55 160 64 168ZM81 181C73 191 62 193 54 189C61 178 72 177 81 181Z" fill="#f4edf7"/>
+      <path d="M40 95C52 90 56 81 54 74C44 78 39 85 40 95ZM38 111C50 107 56 99 55 91C43 94 38 101 38 111ZM41 130C52 124 56 115 53 108C43 113 39 122 41 130ZM48 148C58 140 60 131 56 124C47 132 45 141 48 148ZM60 164C68 154 68 145 62 139C55 149 54 158 60 164ZM76 178C80 167 78 158 71 153C66 164 68 173 76 178Z" fill="#ffffff"/>
+    </g>
+  </defs>
+  <use href="#branch"/>
+  <use href="#branch" transform="translate(200 0) scale(-1 1)"/>
+  <g stroke="#572764" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M66 48L61 30L80 40L87 23L100 39L113 23L120 40L139 30L134 48Z" fill="#f4edf7" stroke-width="1.5"/>
+    <path d="M67 51H133V58H67ZM73 63H127" stroke-width="1.5"/>
+    <circle cx="61" cy="26" r="2.5" fill="#572764"/>
+    <circle cx="87" cy="19" r="2.5" fill="#572764"/>
+    <circle cx="113" cy="19" r="2.5" fill="#572764"/>
+    <circle cx="139" cy="26" r="2.5" fill="#572764"/>
+    <path d="M61 76H139V112C139 140 119 158 100 170C81 158 61 140 61 112Z" fill="#ffffff" stroke-width="1.8"/>
+    <path d="M67 82H133V112C133 135 117 151 100 163C83 151 67 135 67 112Z" stroke="#b39bbf" stroke-width=".9"/>
+    <path d="M83 183C89 179 95 180 100 185C105 180 111 179 117 183M87 192L100 186L113 192" stroke-width="1.2"/>
+  </g>
+</svg>

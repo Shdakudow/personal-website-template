@@ -7,13 +7,12 @@
   <meta name="theme-color" content="#ffffff">
   <title>Your Name — Personal website</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./content.js"></script>
   <script defer src="./app.js"></script>
 </head>
 <body>
+  <div class="page-frame" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
     <a class="identity" href="#home" aria-label="Home"><span class="monogram" data-initials aria-hidden="true">YN</span><span data-name>Your Name</span></a>
@@ -24,18 +23,19 @@
   </header>
   <main id="main">
     <section id="home" class="hero wrap" aria-labelledby="home-title">
-      <div class="hero-ornament" aria-hidden="true"><span>◇</span></div>
+      <div class="crest" aria-hidden="true"><img src="./crest.svg" alt="" width="200" height="206"><span data-initials>YN</span></div>
       <h1 id="home-title" data-name>Your Name</h1>
       <p class="hero-tagline" data-tagline></p>
+      <img class="flourish" src="./flourish.svg" alt="" width="300" height="34">
       <p class="hero-intro" data-bio></p>
       <a class="button" href="#classes">Classes at Cornell <span aria-hidden="true">↓</span></a>
     </section>
     <section id="about" class="about-section wrap" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
+      <div class="section-title"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="about-title">About</h2></div>
       <div class="about-copy"><p data-about></p><a id="email-link" class="text-link" hidden>Get in touch <span aria-hidden="true">↗</span></a></div>
     </section>
     <section id="classes" class="classes-section wrap" aria-labelledby="classes-title">
-      <header class="section-heading"><h2 id="classes-title">Classes at Cornell</h2><p>Courses, notes, and resources.</p></header>
+      <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="classes-title">Classes at Cornell</h2><p>Courses, notes, and resources.</p></header>
       <div class="course-toolbar">
         <div class="filter-group"><label for="term-filter">Semester</label><select id="term-filter"><option value="all">All semesters</option></select></div>
         <div class="filter-group search-group"><label for="course-search">Search classes</label><input id="course-search" type="search" placeholder="Course name or code"></div>
@@ -47,7 +47,7 @@
     </section>
     <section id="projects" class="projects-section wrap" aria-labelledby="projects-title">
       <header class="section-heading heading-with-link">
-        <div><h2 id="projects-title">Projects</h2><p>A selection of work and ideas.</p></div>
+        <div><span class="section-ornament" aria-hidden="true">❧</span><h2 id="projects-title">Projects</h2><p>A selection of work and ideas.</p></div>
         <a class="text-link" data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
       </header>
       <div id="project-list" class="project-list"></div>
