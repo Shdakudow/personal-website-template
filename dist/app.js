@@ -59,9 +59,15 @@
     const query = $('#course-search').value.trim().toLowerCase();
     const filtered = courses.filter(course => [course.code, course.title, course.professor, course.term].join(' ').toLowerCase().includes(query));
     $('#semester-groups').replaceChildren();
-    semesters.forEach((term, index) => {
+    const visibleSemesters = semesters.filter(term => filtered.some(course => course.term === term));
+    const semestersPerPage = Math.ceil(visibleSemesters.length / 2);
+    let page;
+    visibleSemesters.forEach((term, index) => {
       const semesterCourses = filtered.filter(course => course.term === term);
-      if (!semesterCourses.length) return;
+      if (index % semestersPerPage === 0) {
+        page = element('div', 'course-page');
+        $('#semester-groups').append(page);
+      }
       const group = element('section', 'semester-group');
       const heading = element('h3', 'semester-heading', term);
       heading.id = `semester-${index}`;
@@ -76,7 +82,7 @@
         list.append(row);
       });
       group.append(heading, list);
-      $('#semester-groups').append(group);
+      page.append(group);
     });
     $('#no-courses').hidden = filtered.length > 0;
     $('#course-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'class' : 'classes'}`;
