@@ -20,7 +20,7 @@ Course format:
 }
 ```
 
-This format is an example, not a claim that CS 1234 is a Cornell course. The website shows only class name, professor, and semester. Class names link to the official semester roster used to verify the instructor. Search works by class name, course code, or professor, with semester filtering. The A&S advising seminar and transfer credits are omitted. Grades, GPA, student identifiers, and transcript files are not included.
+This format is an example, not a claim that CS 1234 is a Cornell course. Courses are grouped under semester headings, newest first, with each entry showing its class name and professor. Class names link to the official semester roster used to verify the instructor. Search works by class name, course code, professor, or semester, and hides groups without matches. The A&S advising seminar and transfer credits are omitted. Grades, GPA, student identifiers, and transcript files are not included.
 
 Replace project examples with your own entries and set their `url` to enable direct project links. The email link stays hidden until an email is configured. Content is rendered as text; source URLs accept only HTTP(S).
 

@@ -61,16 +61,16 @@ select, input { width: 100%; min-height: 48px; color: var(--ink); background: va
 select { min-width: 210px; padding-right: 35px; }
 .search-group { flex: 1; max-width: 360px; margin-left: auto; }
 input::placeholder { color: #74667e; opacity: 1; }
-.course-table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 28px; }
-.course-table th { padding: 12px 14px; border-bottom: 1px solid var(--border); text-align: left; font-size: 14px; font-weight: 500; color: var(--purple); }
-.course-table th:first-child { width: 46%; }
-.course-table th:nth-child(2) { width: 36%; }
-.course-table th:last-child { width: 18%; }
-.course-row td { padding: 21px 14px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+
+#semester-groups { margin-top: 32px; }
+.semester-group + .semester-group { margin-top: 38px; }
+.semester-heading { display: flex; align-items: center; gap: 22px; font-size: 29px; line-height: 1.4; }
+.semester-heading::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.course-list { list-style: none; margin: 12px 0 0; padding: 0; }
+.course-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; padding: 18px 12px; border-bottom: 1px solid var(--line); }
 .course-row:hover { background: var(--lavender); }
-.course-title { font-size: 17px; font-weight: 500; line-height: 1.6; }
-.course-professor { font-size: 16px; color: var(--ink); }
-.course-term { font-size: 15px; color: var(--muted); white-space: nowrap; }
+.course-title { font-size: 17px; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
+.course-professor { font-size: 16px; color: var(--ink); overflow-wrap: anywhere; }
 .course-count { margin-top: 17px; font-size: 14px; color: var(--muted); }
 .empty-state { padding-block: 30px; color: var(--muted); }
 .heading-with-link .text-link { margin-top: 12px; }
@@ -117,14 +117,11 @@ dialog h2 { font-size: 32px; }
   select { min-width: 0; }
   .filter-group { flex: 1; min-width: 0; }
   .search-group { max-width: none; }
-  .course-table, .course-table tbody { display: block; }
-  .course-table thead { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .course-row { display: block; padding: 19px 6px; border-bottom: 1px solid var(--line); }
-  .course-row td { display: block; border: 0; padding: 0; }
-  .course-row td + td { margin-top: 6px; }
+  .semester-heading { font-size: 27px; gap: 18px; }
+  .semester-group + .semester-group { margin-top: 30px; }
+  .course-row { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 6px; }
   .course-title { font-size: 18px; }
   .course-professor { font-size: 15px; }
-  .course-term { font-size: 14px; }
   .project-list { grid-template-columns: 1fr; gap: 22px; }
   .project-card { padding: 25px; }
   .site-footer { flex-wrap: wrap; gap: 8px 20px; padding-bottom: 30px; }

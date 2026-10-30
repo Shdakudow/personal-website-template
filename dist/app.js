@@ -50,39 +50,37 @@
     if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
   });
   const courses = content.courses || [];
-  [...new Set(courses.map(course => course.term))].forEach(term => {
-    const option = element('option', '', term); option.value = term; $('#term-filter').append(option);
-  });
+  const semesterOrder = term => {
+    const [season, year] = term.split(' ');
+    return (Number(year) || 0) * 10 + ({ Winter: 1, Spring: 2, Summer: 3, Fall: 4 }[season] || 0);
+  };
+  const semesters = [...new Set(courses.map(course => course.term))].sort((a, b) => semesterOrder(b) - semesterOrder(a));
   function renderCourses() {
     const query = $('#course-search').value.trim().toLowerCase();
-    const term = $('#term-filter').value;
-    const filtered = courses.filter(course => (term === 'all' || course.term === term) && [course.code, course.title, course.professor, course.term].join(' ').toLowerCase().includes(query));
-    $('#course-list').replaceChildren();
-    filtered.forEach(course => {
-      const row = element('tr', 'course-row');
-      row.setAttribute('role', 'row');
-      const titleCell = element('td', 'course-name');
-      titleCell.setAttribute('role', 'cell');
-      titleCell.setAttribute('headers', 'class-column');
-      const source = safeUrl(course.source);
-      const title = element(source ? 'a' : 'span', 'course-title', course.title);
-      if (source) { title.href = source; title.target = '_blank'; title.rel = 'noopener noreferrer'; }
-      titleCell.append(title);
-      const professorCell = element('td', 'course-professor', course.professor);
-      professorCell.setAttribute('role', 'cell');
-      professorCell.setAttribute('headers', 'professor-column');
-      professorCell.dataset.label = 'Professor';
-      const termCell = element('td', 'course-term', course.term);
-      termCell.setAttribute('role', 'cell');
-      termCell.setAttribute('headers', 'term-column');
-      termCell.dataset.label = 'Term';
-      row.append(titleCell, professorCell, termCell);
-      $('#course-list').append(row);
+    const filtered = courses.filter(course => [course.code, course.title, course.professor, course.term].join(' ').toLowerCase().includes(query));
+    $('#semester-groups').replaceChildren();
+    semesters.forEach((term, index) => {
+      const semesterCourses = filtered.filter(course => course.term === term);
+      if (!semesterCourses.length) return;
+      const group = element('section', 'semester-group');
+      const heading = element('h3', 'semester-heading', term);
+      heading.id = `semester-${index}`;
+      group.setAttribute('aria-labelledby', heading.id);
+      const list = element('ul', 'course-list');
+      semesterCourses.forEach(course => {
+        const row = element('li', 'course-row');
+        const source = safeUrl(course.source);
+        const title = element(source ? 'a' : 'span', 'course-title', course.title);
+        if (source) { title.href = source; title.target = '_blank'; title.rel = 'noopener noreferrer'; }
+        row.append(title, element('span', 'course-professor', course.professor));
+        list.append(row);
+      });
+      group.append(heading, list);
+      $('#semester-groups').append(group);
     });
     $('#no-courses').hidden = filtered.length > 0;
-    $('#course-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'class' : 'classes'}${term !== 'all' ? ` · ${term}` : ' · All semesters'}`;
+    $('#course-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'class' : 'classes'}`;
   }
-  $('#term-filter').addEventListener('change', renderCourses);
   $('#course-search').addEventListener('input', renderCourses);
   renderCourses();
   (content.projects || []).forEach(project => {

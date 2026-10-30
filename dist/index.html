@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#ffffff">
   <title>Jupiter Yao — Personal website</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css?v=b1d25ef3f080">
+  <link rel="stylesheet" href="./styles.css?v=8af4a7a08467">
   <script defer src="./content.js?v=7cf5707fa3b4"></script>
-  <script defer src="./app.js?v=06984f0a30a2"></script>
+  <script defer src="./app.js?v=1b12a68f8739"></script>
 </head>
 <body>
   <div class="page-frame" aria-hidden="true"></div>
@@ -37,14 +37,10 @@
     <section id="classes" class="classes-section wrap" aria-labelledby="classes-title">
       <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="classes-title">Classes at Cornell</h2></header>
       <div class="course-toolbar">
-        <div class="filter-group"><label for="term-filter">Semester</label><select id="term-filter"><option value="all">All semesters</option></select></div>
         <div class="filter-group search-group"><label for="course-search">Search classes</label><input id="course-search" type="search" placeholder="Class or professor"></div>
       </div>
-      <table class="course-table" role="table" aria-labelledby="classes-title">
-        <thead role="rowgroup"><tr role="row"><th id="class-column" role="columnheader" scope="col">Class</th><th id="professor-column" role="columnheader" scope="col">Professor</th><th id="term-column" role="columnheader" scope="col">Term</th></tr></thead>
-        <tbody id="course-list" role="rowgroup"></tbody>
-      </table>
-      <p id="no-courses" class="empty-state" hidden>No matching classes. Try another search or semester.</p>
+      <div id="semester-groups"></div>
+      <p id="no-courses" class="empty-state" hidden>No matching classes. Try another class, professor, or semester.</p>
       <p class="course-count" id="course-count" role="status" aria-live="polite"></p>
     </section>
     <section id="projects" class="projects-section wrap" aria-labelledby="projects-title">
