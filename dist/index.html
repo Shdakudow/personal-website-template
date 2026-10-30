@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personal home for learning, projects, and classes at Cornell.">
+  <meta name="theme-color" content="#f8f7f3">
+  <title>Your Name — Personal website</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./content.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="identity" href="#home" aria-label="Home"><span class="monogram" data-initials>YN</span><span data-name>Your Name</span></a>
+    <nav aria-label="Main navigation"><a href="#about">About</a><a href="#classes">Cornell classes</a><a href="#projects">Projects</a><a data-github class="github-nav" href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section id="home" class="hero wrap">
+      <div class="eyebrow"><span class="status-dot"></span> A PERSONAL NOTEBOOK</div>
+      <h1>A home for what I’m<br>learning <em>& making.</em></h1>
+      <div class="hero-bottom"><p data-bio></p><a class="text-link" href="#classes">Explore my classes <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-rule"><span>CURIOUS BY DEFAULT.</span><span>ALWAYS A WORK IN PROGRESS.</span></div>
+    </section>
+
+    <section id="about" class="about-section wrap section-grid" aria-labelledby="about-title">
+      <div class="section-label"><span>01 / A LITTLE CONTEXT</span><h2 id="about-title">Hello, I’m<br> <span data-name>Your Name</span><span class="accent">.</span></h2></div>
+      <div class="about-copy"><p class="large-copy" data-tagline></p><p data-about></p><div class="about-links"><a class="text-link" data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a><a id="email-link" class="text-link" hidden>Say hello <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+
+    <section id="classes" class="classes-section" aria-labelledby="classes-title"><div class="wrap">
+      <div class="section-top"><div><div class="section-label">02 / LEARNING IN PUBLIC</div><h2 id="classes-title">Classes at <em>Cornell.</em></h2></div><span class="section-note">A collection of courses & the ideas they spark.</span></div>
+      <div class="course-toolbar"><div class="filter-group"><label for="term-filter">Semester</label><select id="term-filter"><option value="all">All semesters</option></select></div><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="course-search" type="search" aria-label="Search classes" placeholder="Find a class…"></div></div>
+      <p class="template-note">Example entries · replace these with your own classes.</p>
+      <div id="course-list" class="course-list"></div>
+      <p id="no-courses" class="empty-state" hidden>No classes match your search. Try another keyword or semester.</p>
+      <p class="course-count" id="course-count" role="status" aria-live="polite"></p>
+    </div></section>
+
+    <section id="projects" class="projects-section wrap" aria-labelledby="projects-title"><div class="section-top"><div><div class="section-label">03 / FROM IDEA TO SOMETHING</div><h2 id="projects-title">Selected <em>projects.</em></h2></div><a class="text-link" data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">More on GitHub <span aria-hidden="true">↗</span></a></div><div id="project-list" class="project-list"></div></section>
+
+    <section class="closing wrap"><span class="asterisk" aria-hidden="true">✳</span><p>A few interests.<br><em>Many open questions.</em></p><a class="text-link" href="#home">Back to the top <span aria-hidden="true">↑</span></a></section>
+  </main>
+  <footer class="wrap"><span>© <span id="year"></span> <span data-name>Your Name</span></span><span>A small place on the internet.</span><a data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span class="section-label" id="dialog-eyebrow"></span><button type="button" id="close-dialog" aria-label="Close details">×</button></div><h2 id="dialog-title"></h2><p id="dialog-meta"></p><p id="dialog-description"></p><div id="dialog-resources"></div></dialog>
+  <noscript><p class="wrap">Enable JavaScript to view the editable classes and projects in this template.</p></noscript>
+</body>
+</html>
