@@ -23,6 +23,30 @@
   $('[data-tagline]').textContent = content.tagline;
   $('[data-about]').textContent = content.about;
   $('#year').textContent = new Date().getFullYear();
+  const experience = content.experience || [];
+  const education = content.education || [];
+  $('#profile-grid').hidden = experience.length === 0 && education.length === 0;
+  $('#experience-card').hidden = experience.length === 0;
+  $('#education-card').hidden = education.length === 0;
+  experience.forEach(entry => {
+    const block = element('div', 'profile-entry');
+    block.append(
+      element('p', 'profile-period', entry.period),
+      element('h4', 'profile-title', entry.organization),
+      element('p', 'profile-subtitle', entry.institution)
+    );
+    $('#experience-list').append(block);
+  });
+  education.forEach(entry => {
+    const block = element('div', 'profile-entry');
+    block.append(
+      element('p', 'profile-period', entry.period),
+      element('h4', 'profile-title', entry.institution),
+      element('p', 'profile-subtitle', entry.degree)
+    );
+    if (entry.note) block.append(element('p', 'profile-note', entry.note));
+    $('#education-list').append(block);
+  });
   if (content.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(content.email)) {
     $('#email-link').href = `mailto:${content.email}`;
     $('#email-link').hidden = false;

@@ -50,6 +50,14 @@ h2 { font-size: 36px; line-height: 1.3; letter-spacing: .2px; }
 .about-section { text-align: center; padding-block: 8px 46px; }
 .about-copy { max-width: 650px; margin: 20px auto 0; color: var(--muted); }
 .about-copy .text-link { margin-top: 15px; }
+.profile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; margin-top: 30px; text-align: left; }
+.profile-card { padding: 28px; border: 1px solid var(--border); outline: 1px solid var(--line); outline-offset: -6px; }
+.profile-card h3 { font-size: 31px; line-height: 1.3; padding-bottom: 16px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+.profile-entry + .profile-entry { padding-top: 20px; margin-top: 20px; border-top: 1px solid var(--line); }
+.profile-period { color: var(--purple); font-size: 14px; }
+.profile-title { margin: 12px 0 8px; font-size: 19px; font-weight: 500; line-height: 1.5; }
+.profile-subtitle { font-size: 16px; color: var(--ink); }
+.profile-note { margin-top: 12px; font-size: 15px; color: var(--muted); }
 .text-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 15px; font-weight: 500; }
 .research-section, .classes-section, .projects-section { border-top: 3px double var(--line); padding-block: 40px 46px; }
 .publication-list { margin-top: 28px; }
@@ -121,6 +129,8 @@ dialog h2 { font-size: 32px; }
   .flourish { margin-block: 18px; width: 200px; }
   h2 { font-size: 31px; }
   .about-section { padding-bottom: 34px; }
+  .profile-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .profile-card { padding: 24px; }
   .research-section, .classes-section, .projects-section { padding-block: 30px 36px; }
   .publication-card { padding: 24px; }
   .publication-card h3 { font-size: 27px; }

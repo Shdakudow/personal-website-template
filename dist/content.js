@@ -177,5 +177,20 @@ window.siteContent = {
       "url": "https://arxiv.org/abs/2610.26864",
       "pdf": "https://arxiv.org/pdf/2610.26864"
     }
+  ],
+  "experience": [
+    {
+      "organization": "Computational Imaging Lab",
+      "institution": "Cornell University",
+      "period": "September 2026 – Present"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Cornell University",
+      "degree": "B.S. in Computer Science with Honors",
+      "period": "Fall 2025 – Spring 2027 (expected)",
+      "note": "Two-year graduation timeline."
+    }
   ]
 };
