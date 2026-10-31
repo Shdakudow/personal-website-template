@@ -189,8 +189,7 @@ window.siteContent = {
     {
       "institution": "Cornell University",
       "degree": "B.S. in Computer Science with Honors",
-      "period": "Fall 2025 – Spring 2027 (expected)",
-      "note": "Two-year graduation timeline."
+      "period": "Fall 2025 – Spring 2027"
     }
   ]
 };

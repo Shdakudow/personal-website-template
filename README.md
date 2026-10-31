@@ -4,7 +4,7 @@ A responsive personal site with About, Research, Classes at Cornell, Projects, a
 
 ## Customize
 
-Edit `dist/content.js` to update the introduction, GitHub URL, optional email, experience, education, publications, courses, and projects. The About section includes Computational Imaging Lab experience and the expected two-year degree timeline. Publications include H2DF with verified arXiv and PDF links. The course list contains Jupiter Yao’s Cornell coursework; project entries remain labeled examples.
+Edit `dist/content.js` to update the introduction, GitHub URL, optional email, experience, education, publications, courses, and projects. The About section includes Computational Imaging Lab experience and the Fall 2025–Spring 2027 degree dates. Publications include H2DF with verified arXiv and PDF links. The course list contains Jupiter Yao’s Cornell coursework; project entries remain labeled examples.
 
 You can also ask Codex to add a class with its name, professor, and semester, or to update the introduction.
 
