@@ -4,8 +4,8 @@ window.siteContent = {
   "name": "Jupiter Yao",
   "initials": "JY",
   "tagline": "Learning, research, and discovery.",
-  "bio": "Welcome to my personal website. Here you’ll find my classes at Cornell, projects, and notes.",
-  "about": "I study computer science at Cornell University. This website brings together my coursework and projects.",
+  "bio": "Welcome to my personal website. Here you’ll find my research, projects, and classes at Cornell.",
+  "about": "I study computer science at Cornell University. This website brings together my coursework and research.",
   "github": "https://github.com/Shdakudow",
   "email": "",
   "courses": [
@@ -164,6 +164,18 @@ window.siteContent = {
       "description": "Describe a research question, experiment, or idea you’re working on.",
       "tags": [],
       "url": ""
+    }
+  ],
+  "publications": [
+    {
+      "title": "H2DF: Calibrated Target Bands for Controllable Language-Model Unlearning",
+      "authors": [
+        "Jupiter Yao"
+      ],
+      "year": "2026",
+      "summary": "Calibrated loss targets for controllable language-model unlearning, evaluated on TOFU and MUSE-News.",
+      "url": "https://arxiv.org/abs/2610.26864",
+      "pdf": "https://arxiv.org/pdf/2610.26864"
     }
   ]
 };

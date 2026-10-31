@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#ffffff">
   <title>Jupiter Yao — Personal website</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css?v=1cb568f984f3">
-  <script defer src="./content.js?v=47c7315518ed"></script>
-  <script defer src="./app.js?v=4521b881b600"></script>
+  <link rel="stylesheet" href="./styles.css?v=4cda3402eebd">
+  <script defer src="./content.js?v=229c84a9ce92"></script>
+  <script defer src="./app.js?v=441435ac9744"></script>
 </head>
 <body>
   <div class="page-frame" aria-hidden="true"></div>
@@ -17,7 +17,7 @@
   <header class="site-header wrap">
     <a class="identity" href="#home" aria-label="Home"><span class="monogram" data-initials aria-hidden="true">JY</span><span data-name>Jupiter Yao</span></a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a><a href="#classes">Cornell classes</a><a href="#projects">Projects</a>
+      <a href="#about">About</a><a href="#research" data-research-link>Research</a><a href="#classes">Cornell classes</a><a href="#projects">Projects</a>
       <a data-github class="github-nav" href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
@@ -33,6 +33,10 @@
     <section id="about" class="about-section wrap" aria-labelledby="about-title">
       <div class="section-title"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="about-title">About</h2></div>
       <div class="about-copy"><p data-about></p><a id="email-link" class="text-link" hidden>Get in touch <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section id="research" class="research-section wrap" aria-labelledby="research-title">
+      <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="research-title">Research</h2></header>
+      <div id="publication-list" class="publication-list"></div>
     </section>
     <section id="classes" class="classes-section wrap" aria-labelledby="classes-title">
       <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="classes-title">Classes at Cornell</h2></header>

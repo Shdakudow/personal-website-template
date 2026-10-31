@@ -1,10 +1,10 @@
 # Jupiter Yao — Personal website
 
-A responsive personal site with About, Classes at Cornell, Projects, and a GitHub profile link. Built with plain HTML, CSS, and JavaScript. No package installation or build step is needed.
+A responsive personal site with About, Research, Classes at Cornell, Projects, and a GitHub profile link. Built with plain HTML, CSS, and JavaScript. No package installation or build step is needed.
 
 ## Customize
 
-Edit `dist/content.js` to update the introduction, GitHub URL, optional email, courses, and projects. The course list contains Jupiter Yao’s Cornell coursework; project entries remain labeled examples.
+Edit `dist/content.js` to update the introduction, GitHub URL, optional email, publications, courses, and projects. Publications include H2DF with verified arXiv and PDF links. The course list contains Jupiter Yao’s Cornell coursework; project entries remain labeled examples.
 
 You can also ask Codex to add a class with its name, professor, and semester, or to update the introduction.
 

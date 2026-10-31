@@ -90,6 +90,27 @@
   }
   $('#course-search').addEventListener('input', renderCourses);
   renderCourses();
+  const publications = content.publications || [];
+  $('#research').hidden = publications.length === 0;
+  $('[data-research-link]').hidden = publications.length === 0;
+  publications.forEach(publication => {
+    const article = element('article', 'publication-card');
+    article.append(
+      element('p', 'publication-meta', `${publication.authors.join(', ')} · arXiv preprint · ${publication.year}`),
+      element('h3', '', publication.title),
+      element('p', 'publication-summary', publication.summary)
+    );
+    const links = element('div', 'publication-links');
+    [['Read on arXiv ↗', publication.url], ['PDF ↗', publication.pdf]].forEach(([label, value]) => {
+      const url = safeUrl(value);
+      if (!url) return;
+      const link = element('a', 'text-link', label);
+      link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      links.append(link);
+    });
+    article.append(links);
+    $('#publication-list').append(article);
+  });
   (content.projects || []).forEach(project => {
     const article = element('article', 'project-card');
     article.append(element('div', 'project-category', project.category), element('h3', '', project.title), element('p', '', project.description));
