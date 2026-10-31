@@ -27,17 +27,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 86px; border-bottom: 1px solid var(--line); }
 .identity { display: flex; align-items: center; gap: 12px; color: var(--purple-dark); font-family: var(--serif); font-size: 19px; letter-spacing: 1px; }
 .identity:hover { text-decoration: none; }
-.monogram { width: 32px; height: 35px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 0 0 45% 45%; font-size: 14px; letter-spacing: 0; }
 .site-header nav { display: flex; align-items: center; gap: 26px; font-size: 14px; }
 .site-header nav a { display: inline-flex; align-items: center; min-height: 44px; }
 .github-nav { gap: 8px; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--purple-dark); overflow-wrap: anywhere; }
 .overview { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 42px; padding-block: 32px; }
-.hero { min-width: 0; }
-.hero-identity { display: flex; align-items: center; gap: 16px; }
-.crest { position: relative; width: 82px; height: 84.46px; flex-shrink: 0; color: var(--purple); }
+.hero { display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: center; gap: 20px; min-width: 0; }
+.hero-identity { display: block; }
+.hero-copy { min-width: 0; }
+.personal-photo { margin: 0; min-width: 0; }
+.photo-crop { aspect-ratio: 1; overflow: hidden; padding: 0; border: 1px solid var(--border); outline: 1px solid var(--line); outline-offset: 4px; }
+.photo-crop img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 33%; transform: scale(1.25); transform-origin: 50% 58%; }
+.personal-photo figcaption { display: flex; flex-direction: column; gap: 3px; margin-top: 10px; font-size: 13px; line-height: 1.5; color: var(--purple); }
+.memorial { color: var(--muted); white-space: nowrap; }
+.crest { position: relative; width: 56px; height: 57.68px; flex-shrink: 0; color: var(--purple); }
 .crest img { display: block; width: 100%; height: auto; }
-.crest span { position: absolute; top: 39px; left: 0; width: 100%; text-align: center; font: 17px/1 var(--serif); }
+.crest span { position: absolute; top: 27px; left: 0; width: 100%; text-align: center; font: 12px/1 var(--serif); }
 h1 { font-size: clamp(44px, 4.3vw, 58px); line-height: 1.15; letter-spacing: .3px; }
 .hero-tagline { margin-top: 8px; color: var(--purple); font-size: 14px; line-height: 1.5; }
 .hero-intro { max-width: 460px; margin-top: 16px; color: var(--muted); text-wrap: pretty; }
@@ -85,6 +90,7 @@ input::placeholder { color: #74667e; opacity: 1; }
 .course-row { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; padding: 9px 10px; border: 1px solid transparent; background: var(--lavender); }
 .course-row:hover { border-color: var(--border); background: var(--white); }
 .course-title { font-size: 16px; font-weight: 500; line-height: 1.45; overflow-wrap: anywhere; }
+.course-code { color: var(--purple); font-size: 13px; font-weight: 600; letter-spacing: .35px; }
 .course-professor { font-size: 14px; line-height: 1.4; color: var(--muted); overflow-wrap: anywhere; }
 .course-count { margin-top: 12px; color: var(--muted); font-size: 14px; }
 .empty-state { padding-block: 20px; color: var(--muted); }
@@ -113,9 +119,7 @@ dialog h2 { font-size: 30px; }
 ::selection { background: #e9dcf2; color: var(--purple-dark); }
 @media (max-width: 840px) {
   .overview { gap: 24px; }
-  .hero-identity { gap: 10px; }
-  .crest { width: 65px; height: 66.95px; }
-  .crest span { top: 31px; font-size: 14px; }
+  .hero { grid-template-columns: 116px minmax(0, 1fr); gap: 16px; }
   h1 { font-size: 43px; }
   .profile-card { grid-template-columns: 1fr; gap: 5px; }
 }
@@ -126,12 +130,13 @@ dialog h2 { font-size: 30px; }
   .site-header { flex-direction: column; align-items: flex-start; gap: 5px; padding-block: 18px 10px; }
   .site-header nav { width: 100%; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
   .overview { grid-template-columns: 1fr; gap: 12px; padding-block: 24px; }
-  .hero-identity { gap: 14px; }
-  .crest { width: 70px; height: 72.1px; }
-  .crest span { top: 33px; font-size: 15px; }
-  h1 { font-size: clamp(38px, 9.5vw, 49px); }
-  .hero-intro { margin-top: 12px; }
-  .hero-links { gap: 24px; margin-top: 8px; }
+  .hero { grid-template-columns: 116px minmax(0, 1fr); grid-template-areas: 'photo identity' 'intro intro' 'links links'; gap: 12px 18px; }
+  .personal-photo { grid-area: photo; }
+  .hero-copy { display: contents; }
+  .hero-identity { grid-area: identity; }
+  h1 { font-size: clamp(35px, 7vw, 49px); }
+  .hero-intro { grid-area: intro; margin-top: 0; }
+  .hero-links { grid-area: links; gap: 24px; margin-top: 0; }
   .profile-card { grid-template-columns: 84px minmax(0, 1fr); gap: 10px; padding-block: 12px; }
   .profile-card:first-child { border-top: 1px solid var(--line); }
   .research-section, .classes-section, .projects-section { padding-block: 22px; }
@@ -150,5 +155,11 @@ dialog h2 { font-size: 30px; }
   .project-list { grid-template-columns: 1fr; }
   .heading-with-link { align-items: flex-start; flex-wrap: wrap; gap: 8px; }
   .site-footer { flex-wrap: wrap; gap: 2px 16px; padding-bottom: 24px; }
+}
+@media (max-width: 380px) {
+  .site-header nav { font-size: 13px; gap: 6px; }
+  .hero { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; }
+  .personal-photo figcaption { font-size: 12px; }
+  h1 { font-size: 32px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

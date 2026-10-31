@@ -2,6 +2,8 @@
 
 A responsive personal site with About, Research, Classes at Cornell, Projects, and a GitHub profile link. Built with plain HTML, CSS, and JavaScript. No package installation or build step is needed.
 
+The coat of arms sits in the top-left header. The introduction uses the original photo of Locke 洛克 and Melody 魅洛迪 from IMG_1591, framed with a CSS crop that preserves the photograph. Locke’s caption includes the requested memorial note.
+
 ## Customize
 
 Edit `dist/content.js` to update the introduction, GitHub URL, optional email, experience, education, publications, courses, and projects. The compact About overview includes Computational Imaging Lab experience and the Fall 2025–Spring 2027 degree dates alongside the introduction. Publications include H2DF with verified arXiv and PDF links. The course list contains Jupiter Yao’s Cornell coursework; sample projects are retained as hidden drafts.
@@ -20,7 +22,7 @@ Course format:
 }
 ```
 
-This format is an example, not a claim that CS 1234 is a Cornell course. Courses appear in two columns on desktop, stacked on mobile. Each semester has an expandable heading and compact entries showing class name and professor. The newest semester in each column starts open; other semesters can be expanded individually. Semesters run newest first. Class names link to the official semester roster used to verify the instructor. Search works by class name, course code, professor, or semester, opens matching semesters, and hides groups without matches. The A&S advising seminar and transfer credits are omitted. Grades, GPA, student identifiers, and transcript files are not included.
+This format is an example, not a claim that CS 1234 is a Cornell course. Courses appear in two columns on desktop, stacked on mobile. Each semester has an expandable heading and compact entries showing course code, class name, and professor. The newest semester in each column starts open; other semesters can be expanded individually. Semesters run newest first. Class names link to the official semester roster used to verify the instructor. Search works by class name, course code, professor, or semester, opens matching semesters, and hides groups without matches. The A&S advising seminar and transfer credits are omitted. Grades, GPA, student identifiers, and transcript files are not included.
 
 Replace project drafts with your own entries, remove `draft: true`, and set their `url` to enable direct project links. The Projects section and navigation link stay hidden until a published entry exists. The contact link uses the configured Cornell email. Set `cv` to a public HTTP(S) URL to show a CV link; it stays hidden while empty. Content is rendered as text; source URLs accept only HTTP(S).
 
