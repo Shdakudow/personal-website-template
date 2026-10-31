@@ -31,13 +31,6 @@ window.siteContent = {
       "source": "https://classes.cornell.edu/browse/roster/FA26/class/CS/6672"
     },
     {
-      "code": "CS 7790",
-      "title": "Seminar in Artificial Intelligence",
-      "professor": "Christopher De Sa",
-      "term": "Fall 2026",
-      "source": "https://classes.cornell.edu/browse/roster/FA26/class/CS/7790"
-    },
-    {
       "code": "ECE 7230",
       "title": "Bayesian Estimation and Stochastic Optimization",
       "professor": "Vikram Krishnamurthy",
@@ -54,7 +47,7 @@ window.siteContent = {
     {
       "code": "PE 1150",
       "title": "Ballroom Dancing",
-      "professor": "Joseph DeFrancesco",
+      "professor": "",
       "term": "Fall 2026",
       "source": "https://classes.cornell.edu/browse/roster/FA26/class/PE/1150"
     },

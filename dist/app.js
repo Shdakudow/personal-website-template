@@ -78,7 +78,8 @@
         const source = safeUrl(course.source);
         const title = element(source ? 'a' : 'span', 'course-title', course.title);
         if (source) { title.href = source; title.target = '_blank'; title.rel = 'noopener noreferrer'; }
-        row.append(title, element('span', 'course-professor', course.professor));
+        row.append(title);
+        if (course.professor) row.append(element('span', 'course-professor', course.professor));
         list.append(row);
       });
       group.append(heading, list);
