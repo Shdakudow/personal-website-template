@@ -3,11 +3,11 @@
 window.siteContent = {
   "name": "Jupiter Yao",
   "initials": "JY",
-  "tagline": "Learning, research, and discovery.",
+  "tagline": "Computer Science · Cornell University",
   "bio": "Welcome to my personal website. Here you’ll find my research, projects, and classes at Cornell.",
-  "about": "I study computer science at Cornell University. This website brings together my coursework and research.",
+  "about": "Research in computational imaging and controllable language-model unlearning.",
   "github": "https://github.com/Shdakudow",
-  "email": "",
+  "email": "jy2228@cornell.edu",
   "courses": [
     {
       "code": "CS 4789",
@@ -156,14 +156,16 @@ window.siteContent = {
       "category": "Example project",
       "description": "A brief introduction to your project: what you made and why it matters.",
       "tags": [],
-      "url": ""
+      "url": "",
+      "draft": true
     },
     {
       "title": "Your research or idea",
       "category": "Example project",
       "description": "Describe a research question, experiment, or idea you’re working on.",
       "tags": [],
-      "url": ""
+      "url": "",
+      "draft": true
     }
   ],
   "publications": [
@@ -191,5 +193,6 @@ window.siteContent = {
       "degree": "B.S. in Computer Science with Honors",
       "period": "Fall 2025 – Spring 2027"
     }
-  ]
+  ],
+  "cv": ""
 };

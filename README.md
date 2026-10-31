@@ -4,7 +4,7 @@ A responsive personal site with About, Research, Classes at Cornell, Projects, a
 
 ## Customize
 
-Edit `dist/content.js` to update the introduction, GitHub URL, optional email, experience, education, publications, courses, and projects. The About section includes Computational Imaging Lab experience and the Fall 2025–Spring 2027 degree dates. Publications include H2DF with verified arXiv and PDF links. The course list contains Jupiter Yao’s Cornell coursework; project entries remain labeled examples.
+Edit `dist/content.js` to update the introduction, GitHub URL, optional email, experience, education, publications, courses, and projects. The compact About overview includes Computational Imaging Lab experience and the Fall 2025–Spring 2027 degree dates alongside the introduction. Publications include H2DF with verified arXiv and PDF links. The course list contains Jupiter Yao’s Cornell coursework; sample projects are retained as hidden drafts.
 
 You can also ask Codex to add a class with its name, professor, and semester, or to update the introduction.
 
@@ -20,9 +20,9 @@ Course format:
 }
 ```
 
-This format is an example, not a claim that CS 1234 is a Cornell course. Courses appear in two facing page panels on desktop, stacked on mobile. Each semester has a large heading and smaller course cards showing class name and professor. Semesters run newest first. Class names link to the official semester roster used to verify the instructor. Search works by class name, course code, professor, or semester, and hides groups without matches. The A&S advising seminar and transfer credits are omitted. Grades, GPA, student identifiers, and transcript files are not included.
+This format is an example, not a claim that CS 1234 is a Cornell course. Courses appear in two columns on desktop, stacked on mobile. Each semester has an expandable heading and compact entries showing class name and professor. The newest semester in each column starts open; other semesters can be expanded individually. Semesters run newest first. Class names link to the official semester roster used to verify the instructor. Search works by class name, course code, professor, or semester, opens matching semesters, and hides groups without matches. The A&S advising seminar and transfer credits are omitted. Grades, GPA, student identifiers, and transcript files are not included.
 
-Replace project examples with your own entries and set their `url` to enable direct project links. The email link stays hidden until an email is configured. Content is rendered as text; source URLs accept only HTTP(S).
+Replace project drafts with your own entries, remove `draft: true`, and set their `url` to enable direct project links. The Projects section and navigation link stay hidden until a published entry exists. The contact link uses the configured Cornell email. Set `cv` to a public HTTP(S) URL to show a CV link; it stays hidden while empty. Content is rendered as text; source URLs accept only HTTP(S).
 
 ## Preview locally
 

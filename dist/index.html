@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#ffffff">
   <title>Jupiter Yao — Personal website</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css?v=22c72ca270b3">
-  <script defer src="./content.js?v=6ac4532fe1ec"></script>
-  <script defer src="./app.js?v=eff468aafd2b"></script>
+  <link rel="stylesheet" href="./styles.css?v=1623cc664f45">
+  <script defer src="./content.js?v=6ab567841f84"></script>
+  <script defer src="./app.js?v=4998fd851c06"></script>
 </head>
 <body>
   <div class="page-frame" aria-hidden="true"></div>
@@ -17,33 +17,35 @@
   <header class="site-header wrap">
     <a class="identity" href="#home" aria-label="Home"><span class="monogram" data-initials aria-hidden="true">JY</span><span data-name>Jupiter Yao</span></a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a><a href="#research" data-research-link>Research</a><a href="#classes">Cornell classes</a><a href="#projects">Projects</a>
+      <a href="#about">About</a><a href="#research" data-research-link>Research</a><a href="#classes">Cornell classes</a><a href="#projects" data-projects-link hidden>Projects</a>
       <a data-github class="github-nav" href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
   <main id="main">
-    <section id="home" class="hero wrap" aria-labelledby="home-title">
-      <div class="crest" aria-hidden="true"><img src="./crest.svg" alt="" width="200" height="206"><span data-initials>JY</span></div>
-      <h1 id="home-title" data-name>Jupiter Yao</h1>
-      <p class="hero-tagline" data-tagline></p>
-      <img class="flourish" src="./flourish.svg" alt="" width="300" height="34">
-      <p class="hero-intro" data-bio></p>
-      <a class="button" href="#classes">Classes at Cornell <span aria-hidden="true">↓</span></a>
-    </section>
-    <section id="about" class="about-section wrap" aria-labelledby="about-title">
-      <div class="section-title"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="about-title">About</h2></div>
-      <div class="about-copy"><p data-about></p><a id="email-link" class="text-link" hidden>Get in touch <span aria-hidden="true">↗</span></a></div>
+    <section id="about" class="overview wrap" aria-labelledby="home-title">
+      <div id="home" class="hero">
+        <div class="hero-identity">
+          <div class="crest" aria-hidden="true"><img src="./crest.svg" alt="" width="200" height="206"><span data-initials>JY</span></div>
+          <div><h1 id="home-title" data-name>Jupiter Yao</h1><p class="hero-tagline" data-tagline></p></div>
+        </div>
+        <p class="hero-intro" data-about></p>
+        <div class="hero-links">
+          <a id="email-link" class="text-link" data-email hidden>Email ↗</a>
+          <a class="text-link" data-cv hidden>CV ↗</a>
+          <a class="text-link" data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
       <div id="profile-grid" class="profile-grid">
-        <article id="experience-card" class="profile-card" aria-labelledby="experience-heading"><h3 id="experience-heading">Experience</h3><div id="experience-list"></div></article>
         <article id="education-card" class="profile-card" aria-labelledby="education-heading"><h3 id="education-heading">Education</h3><div id="education-list"></div></article>
+        <article id="experience-card" class="profile-card" aria-labelledby="experience-heading"><h3 id="experience-heading">Experience</h3><div id="experience-list"></div></article>
       </div>
     </section>
     <section id="research" class="research-section wrap" aria-labelledby="research-title">
-      <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="research-title">Research</h2></header>
+      <header class="section-heading"><h2 id="research-title">Research</h2></header>
       <div id="publication-list" class="publication-list"></div>
     </section>
     <section id="classes" class="classes-section wrap" aria-labelledby="classes-title">
-      <header class="section-heading"><span class="section-ornament" aria-hidden="true">❧</span><h2 id="classes-title">Classes at Cornell</h2></header>
+      <header class="section-heading"><h2 id="classes-title">Classes at Cornell</h2></header>
       <div class="course-toolbar">
         <div class="filter-group search-group"><label for="course-search">Search classes</label><input id="course-search" type="search" placeholder="Class or professor"></div>
       </div>
@@ -51,15 +53,15 @@
       <p id="no-courses" class="empty-state" hidden>No matching classes. Try another class, professor, or semester.</p>
       <p class="course-count" id="course-count" role="status" aria-live="polite"></p>
     </section>
-    <section id="projects" class="projects-section wrap" aria-labelledby="projects-title">
+    <section id="projects" class="projects-section wrap" hidden aria-labelledby="projects-title">
       <header class="section-heading heading-with-link">
-        <div><span class="section-ornament" aria-hidden="true">❧</span><h2 id="projects-title">Projects</h2><p>A selection of work and ideas.</p></div>
+        <div><h2 id="projects-title">Projects</h2><p>A selection of work and ideas.</p></div>
         <a class="text-link" data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
       </header>
       <div id="project-list" class="project-list"></div>
     </section>
   </main>
-  <footer class="site-footer wrap"><span>© <span id="year"></span> <span data-name>Jupiter Yao</span></span><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <footer class="site-footer wrap"><span>© <span id="year"></span> <span data-name>Jupiter Yao</span></span><a data-email data-email-label hidden></a><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
   <dialog id="detail-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
     <div class="dialog-header"><span id="dialog-eyebrow"></span><button type="button" id="close-dialog" aria-label="Close details">×</button></div>
     <h2 id="dialog-title"></h2><p id="dialog-meta"></p><p id="dialog-description"></p><div id="dialog-resources"></div>

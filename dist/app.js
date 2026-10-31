@@ -19,7 +19,6 @@
     const url = safeUrl(content.github);
     if (url) node.href = url; else node.hidden = true;
   });
-  $('[data-bio]').textContent = content.bio;
   $('[data-tagline]').textContent = content.tagline;
   $('[data-about]').textContent = content.about;
   $('#year').textContent = new Date().getFullYear();
@@ -47,10 +46,18 @@
     if (entry.note) block.append(element('p', 'profile-note', entry.note));
     $('#education-list').append(block);
   });
-  if (content.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(content.email)) {
-    $('#email-link').href = `mailto:${content.email}`;
-    $('#email-link').hidden = false;
-  }
+  const validEmail = content.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(content.email);
+  document.querySelectorAll('[data-email]').forEach(link => {
+    link.hidden = !validEmail;
+    if (!validEmail) return;
+    link.href = `mailto:${content.email}`;
+    if (link.hasAttribute('data-email-label')) link.textContent = content.email;
+  });
+  document.querySelectorAll('[data-cv]').forEach(link => {
+    const url = safeUrl(content.cv);
+    link.hidden = !url;
+    if (url) { link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; }
+  });
   const dialog = $('#detail-dialog');
   function showDetails({ eyebrow, title, meta, description, resources = [] }) {
     $('#dialog-eyebrow').textContent = eyebrow;
@@ -79,6 +86,7 @@
     return (Number(year) || 0) * 10 + ({ Winter: 1, Spring: 2, Summer: 3, Fall: 4 }[season] || 0);
   };
   const semesters = [...new Set(courses.map(course => course.term))].sort((a, b) => semesterOrder(b) - semesterOrder(a));
+  const semesterState = new Map(semesters.map((term, index) => [term, index === 0 || index === Math.ceil(semesters.length / 2)]));
   function renderCourses() {
     const query = $('#course-search').value.trim().toLowerCase();
     const filtered = courses.filter(course => [course.code, course.title, course.professor, course.term].join(' ').toLowerCase().includes(query));
@@ -92,10 +100,16 @@
         page = element('div', 'course-page');
         $('#semester-groups').append(page);
       }
-      const group = element('section', 'semester-group');
+      const group = element('details', 'semester-group');
+      group.open = Boolean(query) || semesterState.get(term);
+      const summary = element('summary', 'semester-summary');
       const heading = element('h3', 'semester-heading', term);
       heading.id = `semester-${index}`;
       group.setAttribute('aria-labelledby', heading.id);
+      const count = element('span', 'semester-count', `${semesterCourses.length} ${semesterCourses.length === 1 ? 'class' : 'classes'}`);
+      const indicator = element('span', 'semester-toggle', '⌄');
+      indicator.setAttribute('aria-hidden', 'true');
+      summary.append(heading, count, indicator);
       const list = element('ul', 'course-list');
       semesterCourses.forEach(course => {
         const row = element('li', 'course-row');
@@ -106,7 +120,8 @@
         if (course.professor) row.append(element('span', 'course-professor', course.professor));
         list.append(row);
       });
-      group.append(heading, list);
+      group.append(summary, list);
+      group.addEventListener('toggle', () => { if (!query) semesterState.set(term, group.open); });
       page.append(group);
     });
     $('#no-courses').hidden = filtered.length > 0;
@@ -135,7 +150,10 @@
     article.append(links);
     $('#publication-list').append(article);
   });
-  (content.projects || []).forEach(project => {
+  const projects = (content.projects || []).filter(project => !project.draft);
+  $('#projects').hidden = projects.length === 0;
+  $('[data-projects-link]').hidden = projects.length === 0;
+  projects.forEach(project => {
     const article = element('article', 'project-card');
     article.append(element('div', 'project-category', project.category), element('h3', '', project.title), element('p', '', project.description));
     const url = safeUrl(project.url);
