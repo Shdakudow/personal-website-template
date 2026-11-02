@@ -270,5 +270,11 @@ window.siteContent = {
     "Java"
   ],
   "personal": "Outside research, I enjoy ballroom dancing, jewellery, and reading about interrogation and criminology.",
-  "opportunities": "Open to collaborations and opportunities in computer vision, robotics, and uncertainty quantification across disciplines."
+  "opportunities": "Open to collaborations and opportunities in computer vision, robotics, and uncertainty quantification across disciplines.",
+  "achievements": [
+    {
+      "title": "IMC Prosperity 4 Quantitative Trading Competition",
+      "result": "Top 1%"
+    }
+  ]
 };

@@ -160,7 +160,14 @@
     $('#publication-list').append(article);
   });
   const teaching = content.teaching || [];
+  const achievements = content.achievements || [];
   $('#teaching').hidden = teaching.length === 0;
+  $('#achievements').hidden = achievements.length === 0;
+  achievements.forEach(achievement => {
+    const item = element('li', 'achievement-item');
+    item.append(element('strong', 'achievement-result', achievement.result), element('span', 'achievement-title', achievement.title));
+    $('#achievement-list').append(item);
+  });
   teaching.forEach(appointment => {
     const item = element('li', 'teaching-item');
     const meta = element('div', 'teaching-meta');
@@ -172,7 +179,7 @@
   const languages = content.languages || [];
   const certifications = content.certifications || [];
   $('#languages').hidden = languages.length === 0 && certifications.length === 0;
-  $('#background').hidden = teaching.length === 0 && languages.length === 0 && certifications.length === 0;
+  $('#background').hidden = teaching.length === 0 && achievements.length === 0 && languages.length === 0 && certifications.length === 0;
   languages.forEach(group => {
     const entry = element('div', 'language-group');
     entry.append(element('dt', '', group.names.join(', ')), element('dd', '', group.proficiency));
