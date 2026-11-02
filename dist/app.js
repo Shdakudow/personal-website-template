@@ -20,7 +20,6 @@
     if (url) node.href = url; else node.hidden = true;
   });
   $('[data-tagline]').textContent = content.tagline;
-  $('[data-about]').textContent = content.about;
   $('[data-personal]').textContent = content.personal || '';
   $('[data-personal]').hidden = !content.personal;
   $('[data-opportunities]').textContent = content.opportunities || '';

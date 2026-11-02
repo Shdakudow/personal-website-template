@@ -5,7 +5,6 @@ window.siteContent = {
   "initials": "JY",
   "tagline": "Computer Science · Cornell University",
   "bio": "Welcome to my personal website. Here you’ll find my research, projects, and classes at Cornell.",
-  "about": "Computational imaging, machine unlearning, and action-relevant world models.",
   "github": "https://github.com/Shdakudow",
   "email": "jy2228@cornell.edu",
   "courses": [
