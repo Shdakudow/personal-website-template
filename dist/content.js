@@ -151,20 +151,30 @@ window.siteContent = {
   ],
   "projects": [
     {
-      "title": "Your project title",
-      "category": "Example project",
-      "description": "A brief introduction to your project: what you made and why it matters.",
-      "tags": [],
-      "url": "",
-      "draft": true
+      "title": "GAT with Graph-Aware Features",
+      "category": "Graph learning",
+      "description": "Reproducing GAT on Cora and exploring structural graph features in phi-attention scoring for node classification.",
+      "links": [
+        {
+          "label": "Code on GitHub ↗",
+          "url": "https://github.com/kalvin1019/GAT-CS5782-Final-Project"
+        }
+      ]
     },
     {
-      "title": "Your research or idea",
-      "category": "Example project",
-      "description": "Describe a research question, experiment, or idea you’re working on.",
-      "tags": [],
-      "url": "",
-      "draft": true
+      "title": "ViT–Swin Interactive Demo",
+      "category": "Interactive tutorial",
+      "description": "An interactive guide to patch embeddings, self-attention, shifted windows, and hierarchical representations in ViT and Swin.",
+      "links": [
+        {
+          "label": "Open demo ↗",
+          "url": "https://shdakudow.github.io/VIT-SWIN-demo/"
+        },
+        {
+          "label": "Code on GitHub ↗",
+          "url": "https://github.com/Shdakudow/VIT-SWIN-demo"
+        }
+      ]
     }
   ],
   "publications": [

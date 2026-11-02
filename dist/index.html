@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#ffffff">
   <title>Jupiter Yao — Personal website</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css?v=8186e079536a">
-  <script defer src="./content.js?v=aa0b68bacbfd"></script>
-  <script defer src="./app.js?v=d35d7ad20929"></script>
+  <link rel="stylesheet" href="./styles.css?v=39b7ccd44521">
+  <script defer src="./content.js?v=98da5807904d"></script>
+  <script defer src="./app.js?v=b0f1bc26bda1"></script>
 </head>
 <body>
   <div class="page-frame" aria-hidden="true"></div>
@@ -17,7 +17,7 @@
   <header class="site-header wrap">
     <a class="identity" href="#home" aria-label="Home"><span class="crest" aria-hidden="true"><img src="./crest.svg" alt="" width="200" height="206"><span data-initials>JY</span></span><span data-name>Jupiter Yao</span></a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a><a href="#research" data-research-link>Research</a><a href="#classes">Cornell classes</a><a href="#projects" data-projects-link hidden>Projects</a>
+      <a href="#about">About</a><a href="#research" data-research-link>Research</a><a href="#projects" data-projects-link hidden>Projects</a><a href="#classes">Classes</a>
       <a data-github class="github-nav" href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
@@ -48,6 +48,13 @@
       <header class="section-heading"><h2 id="research-title">Research</h2></header>
       <div id="publication-list" class="publication-list"></div>
     </section>
+    <section id="projects" class="projects-section wrap" hidden aria-labelledby="projects-title">
+      <header class="section-heading heading-with-link">
+        <h2 id="projects-title">Selected projects</h2>
+        <a class="text-link" data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+      </header>
+      <div id="project-list" class="project-list"></div>
+    </section>
     <section id="background" class="background-section wrap" aria-label="Teaching, achievements, and languages">
       <div class="background-panel">
       <section id="teaching" aria-labelledby="teaching-title">
@@ -73,13 +80,6 @@
       <div id="semester-groups"></div>
       <p id="no-courses" class="empty-state" hidden>No matching classes. Try another class, professor, or semester.</p>
       <p class="course-count" id="course-count" role="status" aria-live="polite"></p>
-    </section>
-    <section id="projects" class="projects-section wrap" hidden aria-labelledby="projects-title">
-      <header class="section-heading heading-with-link">
-        <div><h2 id="projects-title">Projects</h2><p>A selection of work and ideas.</p></div>
-        <a class="text-link" data-github href="https://github.com/Shdakudow" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
-      </header>
-      <div id="project-list" class="project-list"></div>
     </section>
   </main>
   <footer class="site-footer wrap"><p class="contact-note" data-opportunities hidden></p><span>© <span id="year"></span> <span data-name>Jupiter Yao</span></span><a data-email data-email-label hidden></a><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>

@@ -195,10 +195,16 @@
   projects.forEach(project => {
     const article = element('article', 'project-card');
     article.append(element('div', 'project-category', project.category), element('h3', '', project.title), element('p', '', project.description));
-    const url = safeUrl(project.url);
-    const action = element(url ? 'a' : 'button', 'project-action', url ? 'View project ↗' : 'Details →');
-    if (url) { action.href = url; action.target = '_blank'; action.rel = 'noopener noreferrer'; }
-    else { action.type = 'button'; action.addEventListener('click', () => showDetails({eyebrow: project.category, title: project.title, meta: 'Example project · ready to customize', description: project.description + ' Replace this entry with your own project and add a URL to link directly to it.'})); }
-    article.append(action); $('#project-list').append(article);
+    const links = element('div', 'project-links');
+    const resources = project.links || [{ label: 'View project ↗', url: project.url }];
+    resources.forEach(resource => {
+      const url = safeUrl(resource.url);
+      if (!url) return;
+      const link = element('a', 'project-action', resource.label);
+      link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      links.append(link);
+    });
+    if (links.childElementCount) article.append(links);
+    $('#project-list').append(article);
   });
 })();
