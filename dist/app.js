@@ -21,10 +21,17 @@
   });
   $('[data-tagline]').textContent = content.tagline;
   $('[data-about]').textContent = content.about;
+  $('[data-personal]').textContent = content.personal || '';
+  $('[data-personal]').hidden = !content.personal;
+  $('[data-opportunities]').textContent = content.opportunities || '';
+  $('[data-opportunities]').hidden = !content.opportunities;
   $('#year').textContent = new Date().getFullYear();
   const experience = content.experience || [];
   const education = content.education || [];
-  $('#profile-grid').hidden = experience.length === 0 && education.length === 0;
+  const skills = content.skills || [];
+  $('#profile-grid').hidden = experience.length === 0 && education.length === 0 && skills.length === 0;
+  $('#skills-card').hidden = skills.length === 0;
+  $('#skills-list').textContent = skills.join(' · ');
   $('#experience-card').hidden = experience.length === 0;
   $('#education-card').hidden = education.length === 0;
   experience.forEach(entry => {

@@ -261,5 +261,14 @@ window.siteContent = {
       "name": "TOEFL",
       "qualification": "114/120"
     }
-  ]
+  ],
+  "skills": [
+    "Python",
+    "PyTorch",
+    "C++",
+    "CUDA",
+    "Java"
+  ],
+  "personal": "Outside research, I enjoy ballroom dancing, jewellery, and reading about interrogation and criminology.",
+  "opportunities": "Open to collaborations and opportunities in computer vision, robotics, and uncertainty quantification across disciplines."
 };
