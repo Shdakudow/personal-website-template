@@ -56,6 +56,7 @@ h1 { font-size: clamp(44px, 4.3vw, 58px); line-height: 1.15; letter-spacing: .3p
 .profile-period { color: var(--muted); font-size: 14px; }
 .profile-title { margin: 3px 0; font-size: 17px; font-weight: 500; line-height: 1.45; }
 .profile-subtitle { font-size: 15px; line-height: 1.5; color: var(--ink); }
+.profile-description { margin-top: 5px; font-size: 15px; line-height: 1.5; color: var(--muted); }
 .profile-note { margin-top: 6px; font-size: 14px; color: var(--muted); }
 .research-section, .classes-section, .projects-section { border-top: 1px solid var(--line); padding-block: 24px 28px; }
 h2 { font-size: 31px; line-height: 1.3; }
@@ -68,6 +69,23 @@ h2 { font-size: 31px; line-height: 1.3; }
 .publication-card h3 { grid-column: 1; font-size: 26px; line-height: 1.25; }
 .publication-summary { grid-column: 1; max-width: 850px; font-size: 16px; color: var(--muted); }
 .publication-links { display: flex; flex-direction: column; align-items: flex-start; grid-column: 2; grid-row: 1 / 4; gap: 3px; }
+.background-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; padding-block: 24px 28px; border-top: 1px solid var(--line); }
+.background-panel { min-width: 0; }
+.background-panel h2 { font-size: 28px; }
+.teaching-list { list-style: none; padding: 0; margin: 14px 0 0; }
+.teaching-item + .teaching-item { margin-top: 13px; padding-top: 13px; border-top: 1px solid var(--line); }
+.teaching-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; font-size: 14px; }
+.teaching-code { color: var(--purple); font-weight: 600; }
+.teaching-period, .teaching-status { color: var(--muted); }
+.teaching-status { font-size: 13px; border-left: 1px solid var(--border); padding-left: 12px; }
+.teaching-course { margin-top: 3px; font-family: var(--sans); font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+.teaching-role { font-size: 14px; color: var(--muted); }
+.language-list { display: grid; gap: 10px; margin: 14px 0 0; }
+.language-group dt { font-size: 16px; line-height: 1.5; }
+.language-group dd { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
+.certification-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 14px 0 0; }
+.certification { display: inline-flex; align-items: baseline; gap: 7px; padding: 4px 9px; border: 1px solid var(--line); font-size: 14px; }
+.certification strong { font-weight: 500; color: var(--purple); }
 .classes-section { position: relative; }
 .classes-section > .section-heading { padding-right: 290px; min-height: 44px; }
 .course-toolbar { position: absolute; top: 24px; right: 0; width: 264px; }
@@ -144,6 +162,7 @@ dialog h2 { font-size: 30px; }
   .publication-card { display: block; padding-left: 14px; }
   .publication-card h3 { margin-block: 6px 10px; font-size: 24px; line-height: 1.3; }
   .publication-links { flex-direction: row; gap: 24px; margin-top: 8px; }
+  .background-section { grid-template-columns: 1fr; gap: 24px; padding-block: 22px; }
   .classes-section > .section-heading { padding-right: 0; min-height: 0; }
   .course-toolbar { position: static; width: 100%; margin-top: 12px; }
   #semester-groups { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 14px; }

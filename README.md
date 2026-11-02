@@ -6,7 +6,7 @@ The coat of arms sits in the top-left header. The introduction uses the original
 
 ## Customize
 
-Edit `dist/content.js` to update the introduction, GitHub URL, optional email, experience, education, publications, courses, and projects. The compact About overview includes Computational Imaging Lab experience and the Fall 2025–Spring 2027 degree dates alongside the introduction. Publications include H2DF with verified arXiv and PDF links. The course list contains Jupiter Yao’s Cornell coursework; sample projects are retained as hidden drafts.
+Edit `dist/content.js` to update the introduction, GitHub URL, optional email, experience, education, publications, teaching, languages, certifications, courses, and projects. The compact About overview includes Computational Imaging Lab experience and the Fall 2025–Spring 2027 degree dates alongside the introduction. Publications include DE-VJEPA (under review at TMLR, with its public code repository) and H2DF (with verified arXiv and PDF links). Teaching and language qualifications share a compact section. Certificate dates are omitted because they are not recalled. The course list contains Jupiter Yao’s Cornell coursework; sample projects are retained as hidden drafts.
 
 You can also ask Codex to add a class with its name, professor, and semester, or to update the introduction.
 

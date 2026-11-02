@@ -32,8 +32,9 @@
     block.append(
       element('p', 'profile-period', entry.period),
       element('h4', 'profile-title', entry.organization),
-      element('p', 'profile-subtitle', entry.institution)
+      element('p', 'profile-subtitle', [entry.role, entry.institution].filter(Boolean).join(' · '))
     );
+    if (entry.description) block.append(element('p', 'profile-description', entry.description));
     $('#experience-list').append(block);
   });
   education.forEach(entry => {
@@ -135,20 +136,45 @@
   publications.forEach(publication => {
     const article = element('article', 'publication-card');
     article.append(
-      element('p', 'publication-meta', `${publication.authors.join(', ')} · arXiv preprint · ${publication.year}`),
+      element('p', 'publication-meta', `${publication.authors.join(', ')} · ${publication.status || 'arXiv preprint'} · ${publication.year}`),
       element('h3', '', publication.title),
       element('p', 'publication-summary', publication.summary)
     );
     const links = element('div', 'publication-links');
-    [['Read on arXiv ↗', publication.url], ['PDF ↗', publication.pdf]].forEach(([label, value]) => {
-      const url = safeUrl(value);
+    const resources = publication.links || [{ label: 'Read on arXiv ↗', url: publication.url }, { label: 'PDF ↗', url: publication.pdf }];
+    resources.forEach(resource => {
+      const url = safeUrl(resource.url);
       if (!url) return;
-      const link = element('a', 'text-link', label);
+      const link = element('a', 'text-link', resource.label);
       link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
       links.append(link);
     });
     article.append(links);
     $('#publication-list').append(article);
+  });
+  const teaching = content.teaching || [];
+  $('#teaching').hidden = teaching.length === 0;
+  teaching.forEach(appointment => {
+    const item = element('li', 'teaching-item');
+    const meta = element('div', 'teaching-meta');
+    meta.append(element('span', 'teaching-code', appointment.code), element('span', 'teaching-period', appointment.term));
+    if (appointment.status) meta.append(element('span', 'teaching-status', appointment.status));
+    item.append(meta, element('h3', 'teaching-course', appointment.title), element('p', 'teaching-role', appointment.role));
+    $('#teaching-list').append(item);
+  });
+  const languages = content.languages || [];
+  const certifications = content.certifications || [];
+  $('#languages').hidden = languages.length === 0 && certifications.length === 0;
+  $('#background').hidden = teaching.length === 0 && languages.length === 0 && certifications.length === 0;
+  languages.forEach(group => {
+    const entry = element('div', 'language-group');
+    entry.append(element('dt', '', group.names.join(', ')), element('dd', '', group.proficiency));
+    $('#language-list').append(entry);
+  });
+  certifications.forEach(certificate => {
+    const item = element('li', 'certification');
+    item.append(element('span', '', certificate.name), element('strong', '', certificate.qualification));
+    $('#certification-list').append(item);
   });
   const projects = (content.projects || []).filter(project => !project.draft);
   $('#projects').hidden = projects.length === 0;

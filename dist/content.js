@@ -5,7 +5,7 @@ window.siteContent = {
   "initials": "JY",
   "tagline": "Computer Science · Cornell University",
   "bio": "Welcome to my personal website. Here you’ll find my research, projects, and classes at Cornell.",
-  "about": "Research in computational imaging and controllable language-model unlearning.",
+  "about": "Computational imaging, machine unlearning, and action-relevant world models.",
   "github": "https://github.com/Shdakudow",
   "email": "jy2228@cornell.edu",
   "courses": [
@@ -170,6 +170,21 @@ window.siteContent = {
   ],
   "publications": [
     {
+      "title": "DE-VJEPA: Decision-Equivalent VJEPA for Action-Relevant World Models",
+      "authors": [
+        "Jupiter Yao"
+      ],
+      "year": "2026",
+      "status": "Under review at TMLR",
+      "summary": "Aligning world-model predictions with action-relevant decisions through policy-induced latent geometry.",
+      "links": [
+        {
+          "label": "Code on GitHub ↗",
+          "url": "https://github.com/Shdakudow/Decision-Equivalent-VJEPA-for-Action-Relevant-World-Models"
+        }
+      ]
+    },
+    {
       "title": "H2DF: Calibrated Target Bands for Controllable Language-Model Unlearning",
       "authors": [
         "Jupiter Yao"
@@ -184,7 +199,9 @@ window.siteContent = {
     {
       "organization": "Computational Imaging Lab",
       "institution": "Cornell University",
-      "period": "September 2026 – Present"
+      "period": "September 2026 – Present",
+      "role": "Undergraduate Researcher",
+      "description": "Uncertainty quantification for lensless reconstruction."
     }
   ],
   "education": [
@@ -194,5 +211,55 @@ window.siteContent = {
       "period": "Fall 2025 – Spring 2027"
     }
   ],
-  "cv": ""
+  "cv": "",
+  "teaching": [
+    {
+      "code": "CS 3780",
+      "title": "Introduction to Machine Learning",
+      "role": "Teaching Assistant",
+      "term": "Fall 2026"
+    },
+    {
+      "code": "CS 4782",
+      "title": "Introduction to Deep Learning",
+      "role": "Teaching Assistant",
+      "term": "Spring 2027",
+      "status": "Upcoming"
+    }
+  ],
+  "languages": [
+    {
+      "names": [
+        "Cantonese",
+        "Mandarin",
+        "English",
+        "Japanese"
+      ],
+      "proficiency": "Very proficient"
+    },
+    {
+      "names": [
+        "Korean"
+      ],
+      "proficiency": "Intermediate"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "JLPT",
+      "qualification": "N1"
+    },
+    {
+      "name": "TOPIK",
+      "qualification": "Level 2"
+    },
+    {
+      "name": "HSK",
+      "qualification": "Level 6"
+    },
+    {
+      "name": "TOEFL",
+      "qualification": "114/120"
+    }
+  ]
 };
