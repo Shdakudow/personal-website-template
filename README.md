@@ -1,6 +1,6 @@
 # Jupiter Yao — Personal website
 
-A responsive personal site with About, Research, Classes at Cornell, Projects, and a GitHub profile link. Built with plain HTML, CSS, and JavaScript. No package installation or build step is needed.
+A responsive personal site with About, Research, Classes at Cornell, Projects, and a GitHub profile link. Built with plain HTML, CSS, and JavaScript. No package installation is needed. Run `python3 scripts/build.py` after content changes; GitHub Actions also runs it before publishing.
 
 The coat of arms sits in the top-left header. The introduction uses the original photo of Locke 洛克 and Melody 魅洛迪 from IMG_1591, framed with a CSS crop that preserves the photograph. Locke’s caption includes the requested memorial note.
 
@@ -28,9 +28,10 @@ Add projects through the `projects` array. Set `draft: true` to hide an entry. U
 
 ## Preview locally
 
-From this directory:
+From this directory, regenerate the initial HTML and start the preview:
 
 ```sh
+python3 scripts/build.py
 python3 -m http.server 8767 --directory dist --bind 127.0.0.1
 ```
 
@@ -43,3 +44,11 @@ Push this repository to GitHub with a `main` branch. In the repository's **Setti
 Use a repository called `Shdakudow.github.io` for the account homepage, or another name for a project website. All asset paths are relative, so either works. Replace the account name if needed.
 
 The template has no server, sign-in, or browser editing system. Updates are made in the source file, directly or through a request to Codex, then published by a Git push.
+
+## Google Search
+
+The build includes the profile, education, experience, research, and project content directly in the HTML. JavaScript refreshes these entries and provides class search and the additional background lists. `siteUrl`, `pageTitle`, and `siteDescription` in `dist/content.js` configure the canonical URL, title, description, social metadata, ProfilePage structured data, and single-page `dist/sitemap.xml`. If the public URL changes, update `siteUrl` and rebuild.
+
+For indexing, add `https://shdakudow.github.io/personal-website-template/` as a **URL prefix** property in [Google Search Console](https://search.google.com/search-console). Use its **HTML tag** verification method, put the supplied meta tag in the document head outside the generated `search-metadata` block, publish, and verify. Then inspect the homepage and request indexing; submit `https://shdakudow.github.io/personal-website-template/sitemap.xml` under Sitemaps. Google controls indexing and timing; publication or a sitemap does not guarantee inclusion.
+
+A project-level `robots.txt` would not control crawling: crawlers read it at the host root. The root currently returns 404, which does not block crawling, so no ineffective project-level file is included.

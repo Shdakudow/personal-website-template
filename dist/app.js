@@ -12,7 +12,7 @@
     try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.href : null; }
     catch { return null; }
   };
-  document.title = `${content.name} — Personal website`;
+  document.title = content.pageTitle || `${content.name} — Personal website`;
   document.querySelectorAll('[data-name]').forEach(node => { node.textContent = content.name; });
   document.querySelectorAll('[data-initials]').forEach(node => { node.textContent = content.initials; });
   document.querySelectorAll('[data-github]').forEach(node => {
@@ -25,6 +25,8 @@
   $('[data-opportunities]').textContent = content.opportunities || '';
   $('[data-opportunities]').hidden = !content.opportunities;
   $('#year').textContent = new Date().getFullYear();
+  // Refresh the HTML included at build time without duplicating entries.
+  ['#experience-list', '#education-list', '#publication-list', '#project-list'].forEach(selector => $(selector).replaceChildren());
   const experience = content.experience || [];
   const education = content.education || [];
   const skills = content.skills || [];

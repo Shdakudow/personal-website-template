@@ -285,5 +285,8 @@ window.siteContent = {
       "title": "IMC Prosperity 4 Quantitative Trading Competition",
       "result": "Top 1%"
     }
-  ]
+  ],
+  "siteUrl": "https://shdakudow.github.io/personal-website-template/",
+  "pageTitle": "Jupiter Yao — Computer Science at Cornell University",
+  "siteDescription": "Jupiter Yao, Cornell University computer science undergraduate researcher. Research in lensless imaging and uncertainty quantification, publications, and projects."
 };
